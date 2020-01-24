@@ -1,4 +1,3 @@
-from binance.client import Client
 import requests
 import time
 import json
@@ -14,7 +13,6 @@ def makeRequest(url, storeAt):
     
     with open(storeAt + str(curTime) + '.json', 'w') as f:
         json.dump(result, f)
-client = Client()
 coins = []
 products = requests.get(url = "https://api.pro.coinbase.com/products").json()
 for i in products:
